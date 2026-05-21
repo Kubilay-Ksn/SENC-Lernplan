@@ -19,7 +19,7 @@
       color: white;
       border-radius: 14px;
       padding: 28px 32px;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -39,11 +39,35 @@
     .countdown-box .days { font-size: 2.2rem; font-weight: 800; line-height: 1; }
     .countdown-box .label { font-size: 0.8rem; opacity: 0.85; margin-top: 2px; }
 
+    /* Klausurhinweis Banner */
+    .klausur-banner {
+      background: #fffbeb;
+      border: 2px solid #f6ad55;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+    .klausur-banner h2 { font-size: 0.95rem; font-weight: 700; color: #c05621; margin-bottom: 10px; }
+    .klausur-aufgaben {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .aufgabe-pill {
+      background: white;
+      border: 1px solid #fbd38d;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      color: #744210;
+    }
+    .aufgabe-pill strong { color: #c05621; }
+
     .overview {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 14px;
-      margin-bottom: 28px;
+      margin-bottom: 20px;
     }
 
     .topic-card {
@@ -55,11 +79,21 @@
     }
     .topic-card h3 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
     .topic-card p { font-size: 0.82rem; color: #4a5568; }
+    .aufgaben-badge {
+      display: inline-block;
+      background: #e53e3e;
+      color: white;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-top: 6px;
+    }
 
-    .c1 { border-color: #667eea; } .c1 h3 { color: #667eea; }
-    .c2 { border-color: #48bb78; } .c2 h3 { color: #38a169; }
-    .c3 { border-color: #ed8936; } .c3 h3 { color: #dd6b20; }
-    .c4 { border-color: #e53e3e; } .c4 h3 { color: #c53030; }
+    .c1 { border-color: #48bb78; } .c1 h3 { color: #276749; }
+    .c2 { border-color: #ed8936; } .c2 h3 { color: #dd6b20; }
+    .c3 { border-color: #e53e3e; } .c3 h3 { color: #c53030; }
+    .c4 { border-color: #9f7aea; } .c4 h3 { color: #6b46c1; }
 
     .week-section { margin-bottom: 26px; }
 
@@ -134,10 +168,10 @@
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
-    .tag-grundlagen { background: #e9d8fd; color: #6b46c1; }
-    .tag-vorgehensmodelle { background: #c6f6d5; color: #276749; }
+    .tag-agile { background: #c6f6d5; color: #276749; }
     .tag-re { background: #feebc8; color: #9c4221; }
     .tag-test { background: #fed7d7; color: #9b2c2c; }
+    .tag-uml { background: #e9d8fd; color: #6b46c1; }
     .tag-wiederholung { background: #e2e8f0; color: #4a5568; }
     .tag-exam { background: #fed7d7; color: #9b2c2c; }
 
@@ -172,10 +206,10 @@
     .progress-label { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px; }
     .progress-bar-bg { background: #e2e8f0; border-radius: 6px; height: 8px; overflow: hidden; }
     .progress-bar { height: 100%; border-radius: 6px; width: 0%; transition: width 1s ease; }
-    .pb1 { background: linear-gradient(90deg, #667eea, #764ba2); }
-    .pb2 { background: linear-gradient(90deg, #48bb78, #38a169); }
-    .pb3 { background: linear-gradient(90deg, #ed8936, #dd6b20); }
-    .pb4 { background: linear-gradient(90deg, #e53e3e, #c53030); }
+    .pb1 { background: linear-gradient(90deg, #48bb78, #276749); }
+    .pb2 { background: linear-gradient(90deg, #ed8936, #dd6b20); }
+    .pb3 { background: linear-gradient(90deg, #e53e3e, #c53030); }
+    .pb4 { background: linear-gradient(90deg, #9f7aea, #6b46c1); }
 
     footer {
       text-align: center;
@@ -191,7 +225,7 @@
   <div>
     <h1>📚 Lernplan SENC2</h1>
     <p>Software Engineering &amp; Continuous Integration · FHDW · Prof. Dr. Kahnert</p>
-    <p style="margin-top:8px; font-size:0.85rem;">18. Mai – 10. Juni 2026 &nbsp;·&nbsp; ca. 1–2 Std. / Tag</p>
+    <p style="margin-top:8px; font-size:0.85rem;">21. Mai – 10. Juni 2026 &nbsp;·&nbsp; ca. 1–2 Std. / Tag</p>
   </div>
   <div class="countdown-box">
     <div class="days" id="countdown">–</div>
@@ -199,23 +233,39 @@
   </div>
 </header>
 
+<!-- Klausurhinweis Banner -->
+<div class="klausur-banner">
+  <h2>🎯 Klausurstruktur (laut Hinweis Prof. Kahnert)</h2>
+  <div class="klausur-aufgaben">
+    <div class="aufgabe-pill"><strong>Aufgabe 1+2:</strong> Agile Bewegung – Kap. 2.5 + Manifesto + Principles</div>
+    <div class="aufgabe-pill"><strong>Aufgabe 3:</strong> Requirements Engineering – Kap. 3.1</div>
+    <div class="aufgabe-pill"><strong>Aufgabe 4:</strong> Softwaretest – Kap. 4 komplett</div>
+    <div class="aufgabe-pill"><strong>Aufgabe 5:</strong> UML Klassendiagramm – Kap. 5.2 + 5.1</div>
+    <div class="aufgabe-pill" style="background:#fff0f0;border-color:#fc8181;color:#9b2c2c;"><strong>Format:</strong> 4 Wissensaufgaben + 1 Anwendungsaufgabe (UML zeichnen)</div>
+  </div>
+</div>
+
 <!-- Themenübersicht -->
 <div class="overview">
   <div class="topic-card c1">
-    <h3>🔵 Block 1</h3>
-    <p><strong>Grundlagen SW-Engineering</strong><br>Lebenszyklus, Begriffe, Motivation<br><em>Skript I (S. 1–16)</em></p>
+    <h3>🟢 Agile (Kap. 2.5)</h3>
+    <p><strong>Scrum, Manifesto, Principles, CI</strong><br>Skript II (S. 20–32)<br>+ Agile Manifesto PDF<br>+ Principles PDF</p>
+    <span class="aufgaben-badge">2 Aufgaben ⭐⭐</span>
   </div>
   <div class="topic-card c2">
-    <h3>🟢 Block 2</h3>
-    <p><strong>Vorgehensmodelle</strong><br>Wasserfall, V-Modell XT, Scrum, CI<br><em>Skript I + II (S. 17–32)</em></p>
+    <h3>🟠 Requirements Eng. (Kap. 3.1)</h3>
+    <p><strong>Ermittlung, Stakeholder, funktional vs. nicht-funktional</strong><br>Skript III (Kap. 3.1)</p>
+    <span class="aufgaben-badge">1 Aufgabe ⭐</span>
   </div>
   <div class="topic-card c3">
-    <h3>🟠 Block 3</h3>
-    <p><strong>Requirements Engineering</strong><br>Ermittlung, User Stories, Stakeholder<br><em>Skript III (22 Seiten)</em></p>
+    <h3>🔴 Softwaretest (Kap. 4)</h3>
+    <p><strong>ISTQB, Testprozess, Testarten</strong><br>Skript IV (komplett)</p>
+    <span class="aufgaben-badge">1 Aufgabe ⭐</span>
   </div>
   <div class="topic-card c4">
-    <h3>🔴 Block 4</h3>
-    <p><strong>Softwaretest</strong><br>ISTQB, Testprozess, Testarten<br><em>Skript IV (24 Seiten)</em></p>
+    <h3>🟣 UML (Kap. 5.2)</h3>
+    <p><strong>Klassendiagramm aus Text zeichnen</strong><br>Skript Kap. 5.2 + 1 Folie 5.1</p>
+    <span class="aufgaben-badge">1 Aufgabe ⭐</span>
   </div>
 </div>
 
@@ -223,19 +273,19 @@
 <div class="progress-section">
   <h2>📊 Themen-Fortschritt</h2>
   <div class="progress-item">
-    <div class="progress-label"><span>Block 1: Grundlagen</span><span id="p1-label">0%</span></div>
+    <div class="progress-label"><span>Agile (Kap. 2.5)</span><span id="p1-label">0%</span></div>
     <div class="progress-bar-bg"><div class="progress-bar pb1" id="pb1"></div></div>
   </div>
   <div class="progress-item">
-    <div class="progress-label"><span>Block 2: Vorgehensmodelle</span><span id="p2-label">0%</span></div>
+    <div class="progress-label"><span>Requirements Engineering (Kap. 3.1)</span><span id="p2-label">0%</span></div>
     <div class="progress-bar-bg"><div class="progress-bar pb2" id="pb2"></div></div>
   </div>
   <div class="progress-item">
-    <div class="progress-label"><span>Block 3: Requirements Engineering</span><span id="p3-label">0%</span></div>
+    <div class="progress-label"><span>Softwaretest (Kap. 4)</span><span id="p3-label">0%</span></div>
     <div class="progress-bar-bg"><div class="progress-bar pb3" id="pb3"></div></div>
   </div>
   <div class="progress-item">
-    <div class="progress-label"><span>Block 4: Softwaretest</span><span id="p4-label">0%</span></div>
+    <div class="progress-label"><span>UML / OO-Analyse (Kap. 5.2)</span><span id="p4-label">0%</span></div>
     <div class="progress-bar-bg"><div class="progress-bar pb4" id="pb4"></div></div>
   </div>
   <p style="font-size:0.75rem;color:#a0aec0;margin-top:10px;">💡 Klicke auf einen Tag, um ihn als erledigt zu markieren – der Fortschritt wird automatisch berechnet.</p>
@@ -243,11 +293,11 @@
 
 <!-- Tipps -->
 <div class="tips-box">
-  <h2>🎯 Lernstrategie</h2>
+  <h2>🎯 Lernstrategie (angepasst an Klausurhinweis)</h2>
   <ul>
-    <li>Definitionen zuerst: Verifikation vs. Validierung, funktional vs. nicht-funktional, statisch vs. dynamisch – das sind Klausur-Klassiker</li>
-    <li>V-Modell XT ist das größte Kapitel (~19 Seiten) – früh anfangen und in 3 Sitzungen aufteilen</li>
-    <li>Scrum: Rollen, Artefakte und Ceremonies auswendig können (Product Owner, Sprint Backlog etc.)</li>
+    <li>Agile hat 2 Aufgaben – das ist der wichtigste Block! Manifesto-Werte + alle 12 Principles auswendig kennen</li>
+    <li>RE: Nur Kap. 3.1 ist relevant – funktional vs. nicht-funktional und Stakeholder sind Klausur-Klassiker</li>
+    <li>UML ist die Anwendungsaufgabe – übe Text → Klassendiagramm umzusetzen, das kommt garantiert</li>
     <li>ISTQB-Grundbegriffe beim Testkapitel direkt auf Karteikarten schreiben</li>
     <li>Am Wochenende immer kurze Wiederholung der Woche – keine neuen Themen</li>
     <li>Ab 8. Juni: Nur noch wiederholen, nichts Neues mehr anfangen</li>
@@ -258,98 +308,71 @@
 <div class="week-section">
   <div class="week-header">
     <span class="week-badge">Woche 1</span>
-    <span class="week-title">Grundlagen + Vorgehensmodelle (Wasserfall & V-Modell)</span>
+    <span class="week-title">Agile Bewegung & Scrum (2 Klausuraufgaben!)</span>
     <div class="week-line"></div>
-    <span style="font-size:0.8rem;color:#718096;white-space:nowrap">18.–24. Mai</span>
+    <span style="font-size:0.8rem;color:#718096;white-space:nowrap">21.–25. Mai</span>
   </div>
   <div class="days-grid">
 
-    <div class="day-card today" data-date="2026-05-18" data-block="1" onclick="toggleDone(this)">
-      <div class="day-date">Mo, 18. Mai</div>
-      <span class="tag tag-grundlagen">Block 1</span>
-      <span class="time-badge">~1 Std.</span>
-      <div class="day-name">Einführung & Organisatorisches</div>
-      <ul class="day-tasks">
-        <li>Skript I: S. 1–7 durchlesen</li>
-        <li>Begriff „Software Engineering" definieren können</li>
-        <li>Curriculum + Prüfungsform notieren</li>
-      </ul>
-    </div>
-
-    <div class="day-card" data-date="2026-05-19" data-block="1" onclick="toggleDone(this)">
-      <div class="day-date">Di, 19. Mai</div>
-      <span class="tag tag-grundlagen">Block 1</span>
-      <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">SW-Lebenszyklus & Begriffe</div>
-      <ul class="day-tasks">
-        <li>Skript I: S. 8–16</li>
-        <li>Grob-Modell Lebenszyklus skizzieren</li>
-        <li>Verifikation vs. Validierung lernen</li>
-        <li>Iterative Entwicklung erklären können</li>
-      </ul>
-    </div>
-
-    <div class="day-card" data-date="2026-05-20" data-block="2" onclick="toggleDone(this)">
-      <div class="day-date">Mi, 20. Mai</div>
-      <span class="tag tag-vorgehensmodelle">Block 2</span>
-      <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">Vorgehensmodelle allg. + Wasserfallmodell</div>
-      <ul class="day-tasks">
-        <li>Skript I: S. 17–25</li>
-        <li>Wasserfall: Phasen, Vor- & Nachteile</li>
-        <li>Wann ist Wasserfall sinnvoll?</li>
-        <li>Einsatz-Empfehlung merken</li>
-      </ul>
-    </div>
-
-    <div class="day-card" data-date="2026-05-21" data-block="2" onclick="toggleDone(this)">
+    <div class="day-card" data-date="2026-05-21" data-block="1" onclick="toggleDone(this)">
       <div class="day-date">Do, 21. Mai</div>
-      <span class="tag tag-vorgehensmodelle">Block 2</span>
-      <span class="time-badge">~2 Std.</span>
-      <div class="day-name">V-Modell – Teil 1</div>
-      <ul class="day-tasks">
-        <li>Skript II: S. 1–8</li>
-        <li>V-Modell XT: Was ist das? Seit wann?</li>
-        <li>3 Projekttypen (AG / AN / AG+AN)</li>
-        <li>Vergleich zu V-Modell 97</li>
-      </ul>
-    </div>
-
-    <div class="day-card" data-date="2026-05-22" data-block="2" onclick="toggleDone(this)">
-      <div class="day-date">Fr, 22. Mai</div>
-      <span class="tag tag-vorgehensmodelle">Block 2</span>
-      <span class="time-badge">~2 Std.</span>
-      <div class="day-name">V-Modell XT – Teil 2: Vorgehensbausteine</div>
-      <ul class="day-tasks">
-        <li>Skript II: S. 9–16</li>
-        <li>28 Vorgehensbausteine: Überblick</li>
-        <li>Beispiel-Baust. Problem- & Änderungsmanagement</li>
-        <li>Entscheidungspunkte verstehen</li>
-      </ul>
-    </div>
-
-    <div class="day-card weekend" data-date="2026-05-23" data-block="2" onclick="toggleDone(this)">
-      <div class="day-date">Sa, 23. Mai</div>
-      <span class="tag tag-vorgehensmodelle">Block 2</span>
+      <span class="tag tag-agile">Agile</span>
       <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">V-Modell XT – Abschluss</div>
+      <div class="day-name">Agile Grundlagen & Scrum Rollen</div>
       <ul class="day-tasks">
-        <li>Skript II: S. 17–19</li>
-        <li>Vor- & Nachteile V-Modell XT</li>
-        <li>Plangetrieben vs. agil – Einordnung</li>
-        <li>Kurze Zusammenfassung schreiben</li>
+        <li>Skript II: S. 20–25</li>
+        <li>Was ist agile Entwicklung? Werte & Prinzipien</li>
+        <li>Scrum: Rollen (Product Owner, Scrum Master, Dev-Team)</li>
+        <li>Scrum: Artefakte (Product Backlog, Sprint Backlog, Increment)</li>
+      </ul>
+    </div>
+
+    <div class="day-card" data-date="2026-05-22" data-block="1" onclick="toggleDone(this)">
+      <div class="day-date">Fr, 22. Mai</div>
+      <span class="tag tag-agile">Agile</span>
+      <span class="time-badge">~1,5 Std.</span>
+      <div class="day-name">Scrum Ceremonies + CI</div>
+      <ul class="day-tasks">
+        <li>Skript II: S. 26–32</li>
+        <li>Scrum Ceremonies: Sprint Planning, Daily, Review, Retro</li>
+        <li>Wann agil, wann plangetrieben?</li>
+        <li>Continuous Integration: Ziele + Key Practices (Fowler)</li>
+      </ul>
+    </div>
+
+    <div class="day-card weekend" data-date="2026-05-23" data-block="1" onclick="toggleDone(this)">
+      <div class="day-date">Sa, 23. Mai</div>
+      <span class="tag tag-agile">Agile</span>
+      <span class="time-badge">~1,5 Std.</span>
+      <div class="day-name">Agile Manifesto – 4 Werte</div>
+      <ul class="day-tasks">
+        <li>Agile Manifesto PDF komplett lesen</li>
+        <li>4 Werte auswendig lernen (Individuals, Working Software, Customer Collab., Responding to Change)</li>
+        <li>Bedeutung jedes Wertes erklären können</li>
       </ul>
     </div>
 
     <div class="day-card weekend" data-date="2026-05-24" data-block="1" onclick="toggleDone(this)">
       <div class="day-date">So, 24. Mai</div>
+      <span class="tag tag-agile">Agile</span>
+      <span class="time-badge">~1,5 Std.</span>
+      <div class="day-name">12 Principles (Begleitdokument)</div>
+      <ul class="day-tasks">
+        <li>Principles Behind the Agile Manifesto PDF lesen</li>
+        <li>Alle 12 Principles durcharbeiten</li>
+        <li>Wichtigste Principles markieren &amp; auf Karteikarten</li>
+      </ul>
+    </div>
+
+    <div class="day-card" data-date="2026-05-25" data-block="1" onclick="toggleDone(this)">
+      <div class="day-date">Mo, 25. Mai</div>
       <span class="tag tag-wiederholung">Wiederholung</span>
       <span class="time-badge">~1 Std.</span>
-      <div class="day-name">Woche 1 wiederholen</div>
+      <div class="day-name">Agile Wiederholung</div>
       <ul class="day-tasks">
-        <li>Alle Definitionen aus Block 1+2 überprüfen</li>
-        <li>Karteikarten anlegen (Wasserfall, V-Modell)</li>
-        <li>Offene Fragen notieren</li>
+        <li>Scrum-Rollen + Artefakte + Ceremonies aus dem Kopf aufschreiben</li>
+        <li>4 Manifesto-Werte aus Gedächtnis nennen</li>
+        <li>Agil vs. plangetrieben: Unterschiede erklären</li>
       </ul>
     </div>
 
@@ -360,87 +383,74 @@
 <div class="week-section">
   <div class="week-header">
     <span class="week-badge">Woche 2</span>
-    <span class="week-title">Agile Modelle / Scrum / CI + Requirements Engineering</span>
+    <span class="week-title">Requirements Engineering + Softwaretest</span>
     <div class="week-line"></div>
-    <span style="font-size:0.8rem;color:#718096;white-space:nowrap">25.–31. Mai</span>
+    <span style="font-size:0.8rem;color:#718096;white-space:nowrap">26.–31. Mai</span>
   </div>
   <div class="days-grid">
 
-    <div class="day-card" data-date="2026-05-25" data-block="2" onclick="toggleDone(this)">
-      <div class="day-date">Mo, 25. Mai</div>
-      <span class="tag tag-vorgehensmodelle">Block 2</span>
-      <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">Agile Modelle & Scrum Grundlagen</div>
-      <ul class="day-tasks">
-        <li>Skript II: S. 20–25</li>
-        <li>Agile Manifesto + 12 Principles lesen</li>
-        <li>Scrum: Rollen (PO, SM, Dev-Team)</li>
-        <li>Scrum: Artefakte (Product Backlog, Sprint Backlog, Increment)</li>
-      </ul>
-    </div>
-
     <div class="day-card" data-date="2026-05-26" data-block="2" onclick="toggleDone(this)">
       <div class="day-date">Di, 26. Mai</div>
-      <span class="tag tag-vorgehensmodelle">Block 2</span>
-      <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">Scrum Details + Continuous Integration</div>
-      <ul class="day-tasks">
-        <li>Skript II: S. 26–32</li>
-        <li>Scrum Ceremonies: Planning, Daily, Review, Retro</li>
-        <li>Wann agil, wann plangetrieben?</li>
-        <li>CI: Ziele, Key Practices (Fowler), Pipeline</li>
-      </ul>
-    </div>
-
-    <div class="day-card" data-date="2026-05-27" data-block="3" onclick="toggleDone(this)">
-      <div class="day-date">Mi, 27. Mai</div>
-      <span class="tag tag-re">Block 3</span>
+      <span class="tag tag-re">RE</span>
       <span class="time-badge">~1,5 Std.</span>
       <div class="day-name">Requirements Engineering – Grundlagen</div>
       <ul class="day-tasks">
-        <li>Skript III: S. 1–8</li>
+        <li>Skript III: Kap. 3.1 Teil 1</li>
         <li>4 Haupttätigkeiten: Ermittlung, Prüfung, Abstimmung, Dokumentation</li>
         <li>Funktionale vs. nicht-funktionale Anforderungen</li>
         <li>Boehm-Kostenkurve (Faktor 1 / 20 / 100)</li>
       </ul>
     </div>
 
+    <div class="day-card" data-date="2026-05-27" data-block="2" onclick="toggleDone(this)">
+      <div class="day-date">Mi, 27. Mai</div>
+      <span class="tag tag-re">RE</span>
+      <span class="time-badge">~1,5 Std.</span>
+      <div class="day-name">Stakeholder & Anforderungsarten</div>
+      <ul class="day-tasks">
+        <li>Skript III: Kap. 3.1 Teil 2</li>
+        <li>Stakeholder-Typen kennen und beschreiben</li>
+        <li>Lastenheft vs. Pflichtenheft</li>
+        <li>Compliance-Anforderungen</li>
+      </ul>
+    </div>
+
     <div class="day-card" data-date="2026-05-28" data-block="3" onclick="toggleDone(this)">
       <div class="day-date">Do, 28. Mai</div>
-      <span class="tag tag-re">Block 3</span>
-      <span class="time-badge">~2 Std.</span>
-      <div class="day-name">RE – Prüfung, Dokumentation, Verwaltung</div>
+      <span class="tag tag-test">Test</span>
+      <span class="time-badge">~1,5 Std.</span>
+      <div class="day-name">Softwaretest – Einführung & ISTQB</div>
       <ul class="day-tasks">
-        <li>Skript III: S. 9–16</li>
-        <li>Stakeholder-Typen</li>
-        <li>Compliance-Anforderungen</li>
-        <li>Zentrale Ergebnisdokumente</li>
-        <li>Standards (IEEE, IREB)</li>
+        <li>Skript IV: S. 1–8</li>
+        <li>ISTQB: Was ist das, welche Level gibt es?</li>
+        <li>Grundbegriffe: Testen, Testfall, Fehler, Bug, Defekt</li>
+        <li>Warum testen? Kostenwirkung von Fehlern</li>
       </ul>
     </div>
 
     <div class="day-card" data-date="2026-05-29" data-block="3" onclick="toggleDone(this)">
       <div class="day-date">Fr, 29. Mai</div>
-      <span class="tag tag-re">Block 3</span>
-      <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">Agiles RE & User Stories</div>
+      <span class="tag tag-test">Test</span>
+      <span class="time-badge">~2 Std.</span>
+      <div class="day-name">Fundamentaler Testprozess</div>
       <ul class="day-tasks">
-        <li>Skript III: S. 17–22</li>
-        <li>User Story Format: „Als … möchte ich … damit …"</li>
-        <li>Akzeptanzkriterien</li>
-        <li>CPRE-Zertifizierung (Überblick)</li>
+        <li>Skript IV: S. 8–16</li>
+        <li>Phasen: Planung, Steuerung, Analyse, Design, Realisierung, Abschluss</li>
+        <li>Testrahmen verstehen</li>
+        <li>Was gehört zur Testplanung?</li>
       </ul>
     </div>
 
-    <div class="day-card weekend" data-date="2026-05-30" data-block="2" onclick="toggleDone(this)">
+    <div class="day-card weekend" data-date="2026-05-30" data-block="3" onclick="toggleDone(this)">
       <div class="day-date">Sa, 30. Mai</div>
-      <span class="tag tag-wiederholung">Wiederholung</span>
-      <span class="time-badge">~1 Std.</span>
-      <div class="day-name">Woche 2 wiederholen</div>
+      <span class="tag tag-test">Test</span>
+      <span class="time-badge">~1,5 Std.</span>
+      <div class="day-name">Testarten</div>
       <ul class="day-tasks">
-        <li>Scrum-Begriffe aus dem Gedächtnis aufschreiben</li>
-        <li>RE-Tätigkeiten erklären können</li>
-        <li>Karteikarten ergänzen</li>
+        <li>Skript IV: S. 16–24</li>
+        <li>Blackbox vs. Whitebox vs. Greybox</li>
+        <li>Regressionstest: Wann &amp; Warum?</li>
+        <li>Statischer Test: Inspektion, Review</li>
       </ul>
     </div>
 
@@ -448,11 +458,11 @@
       <div class="day-date">So, 31. Mai</div>
       <span class="tag tag-wiederholung">Wiederholung</span>
       <span class="time-badge">~1 Std.</span>
-      <div class="day-name">Agil vs. plangetrieben – Vertiefung</div>
+      <div class="day-name">Woche 2 wiederholen</div>
       <ul class="day-tasks">
-        <li>Vor-/Nachteile beider Ansätze vergleichen</li>
-        <li>Agile Manifesto + Principles aus Ordner lesen</li>
-        <li>Tabelle: Wann welches Modell?</li>
+        <li>RE: Stakeholder-Typen + funktional vs. nicht-funktional frei erklären</li>
+        <li>Testprozess-Phasen aus dem Kopf aufzählen</li>
+        <li>Karteikarten Test-Grundbegriffe anlegen</li>
       </ul>
     </div>
 
@@ -463,7 +473,7 @@
 <div class="week-section">
   <div class="week-header">
     <span class="week-badge">Woche 3</span>
-    <span class="week-title">Softwaretest + Gesamtwiederholung</span>
+    <span class="week-title">UML Klassendiagramm + Gesamtwiederholung</span>
     <div class="week-line"></div>
     <span style="font-size:0.8rem;color:#718096;white-space:nowrap">1.–7. Juni</span>
   </div>
@@ -471,40 +481,40 @@
 
     <div class="day-card" data-date="2026-06-01" data-block="4" onclick="toggleDone(this)">
       <div class="day-date">Mo, 1. Juni</div>
-      <span class="tag tag-test">Block 4</span>
+      <span class="tag tag-uml">UML</span>
       <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">Softwaretest – Einführung & ISTQB</div>
+      <div class="day-name">OO-Analyse & UML Grundlagen</div>
       <ul class="day-tasks">
-        <li>Skript IV: S. 1–7</li>
-        <li>ISTQB: Was ist das, Level?</li>
-        <li>Grundbegriffe: Testen, Testfall, Fehler, Bug</li>
-        <li>Relevanz von Tests (Kostenwirkung)</li>
+        <li>Skript Kap. 5.1 (eine Folie) + 5.2 Einführung</li>
+        <li>Was ist objektorientierte Analyse?</li>
+        <li>Klassen, Attribute, Methoden in UML</li>
+        <li>Beziehungen: Assoziation, Vererbung, Aggregation, Komposition</li>
       </ul>
     </div>
 
     <div class="day-card" data-date="2026-06-02" data-block="4" onclick="toggleDone(this)">
       <div class="day-date">Di, 2. Juni</div>
-      <span class="tag tag-test">Block 4</span>
+      <span class="tag tag-uml">UML</span>
       <span class="time-badge">~2 Std.</span>
-      <div class="day-name">Fundamentaler Testprozess</div>
+      <div class="day-name">UML Klassendiagramm – Notation</div>
       <ul class="day-tasks">
-        <li>Skript IV: S. 8–14</li>
-        <li>Phasen: Planung, Steuerung, Analyse, Design, Realisierung, Abschluss</li>
-        <li>Testrahmen verstehen</li>
-        <li>Testplanung: Was gehört dazu?</li>
+        <li>Skript Kap. 5.2 vertiefen</li>
+        <li>Schreibweise von Klassen, Attributen, Methoden üben</li>
+        <li>Multiplizitäten (1, *, 0..1 etc.) verstehen</li>
+        <li>Sichtbarkeiten: + public, - private, # protected</li>
       </ul>
     </div>
 
     <div class="day-card" data-date="2026-06-03" data-block="4" onclick="toggleDone(this)">
       <div class="day-date">Mi, 3. Juni</div>
-      <span class="tag tag-test">Block 4</span>
-      <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">Testarten</div>
+      <span class="tag tag-uml">UML</span>
+      <span class="time-badge">~2 Std.</span>
+      <div class="day-name">UML üben: Text → Klassendiagramm</div>
       <ul class="day-tasks">
-        <li>Skript IV: S. 15–24</li>
-        <li>Blackbox vs. Whitebox vs. Greybox</li>
-        <li>Regressionstest: Wann & Warum?</li>
-        <li>Statischer Test (Inspektion, Review)</li>
+        <li>Textuellen Zusammenhang lesen und analysieren</li>
+        <li>Klassen, Beziehungen und Attribute identifizieren</li>
+        <li>Diagramm zeichnen (auf Papier üben!)</li>
+        <li>Stakeholder aus Text vorstellen können</li>
       </ul>
     </div>
 
@@ -512,11 +522,11 @@
       <div class="day-date">Do, 4. Juni</div>
       <span class="tag tag-wiederholung">Wiederholung</span>
       <span class="time-badge">~2 Std.</span>
-      <div class="day-name">Gesamtwiederholung Block 1 + 2</div>
+      <div class="day-name">Gesamtwiederholung Agile + RE</div>
       <ul class="day-tasks">
-        <li>SW-Engineering, Lebenszyklus: frei erklären</li>
-        <li>Alle Vorgehensmodelle vergleichen</li>
-        <li>V-Modell XT Überblick aus Gedächtnis</li>
+        <li>Scrum komplett frei erklären (Rollen, Artefakte, Ceremonies)</li>
+        <li>4 Manifesto-Werte + wichtigste Principles nennen</li>
+        <li>RE: funktional vs. nicht-funktional mit Beispielen</li>
       </ul>
     </div>
 
@@ -524,11 +534,11 @@
       <div class="day-date">Fr, 5. Juni</div>
       <span class="tag tag-wiederholung">Wiederholung</span>
       <span class="time-badge">~2 Std.</span>
-      <div class="day-name">Gesamtwiederholung Block 3 + 4</div>
+      <div class="day-name">Gesamtwiederholung Test + UML</div>
       <ul class="day-tasks">
-        <li>RE-Tätigkeiten, Stakeholder, User Stories</li>
         <li>Testprozess-Phasen aus Kopf aufzählen</li>
         <li>Testarten mit Beispielen erklären</li>
+        <li>Noch ein UML Klassendiagramm aus Text zeichnen</li>
       </ul>
     </div>
 
@@ -538,9 +548,9 @@
       <span class="time-badge">~1,5 Std.</span>
       <div class="day-name">Übungsfragen & Lücken schließen</div>
       <ul class="day-tasks">
-        <li>Alte Klausurfragen / Übungsblätter</li>
-        <li>Schwachstellen aus Karteikarten angehen</li>
-        <li>Abkürzungen: ISTQB, IREB, CPRE, CI, XT</li>
+        <li>Alle Karteikarten durchgehen</li>
+        <li>Schwachstellen gezielt angehen</li>
+        <li>Abkürzungen: ISTQB, CI, UML, RE, PO, SM</li>
       </ul>
     </div>
 
@@ -550,9 +560,9 @@
       <span class="time-badge">~1 Std.</span>
       <div class="day-name">Definitionen & Karteikarten finalisieren</div>
       <ul class="day-tasks">
-        <li>Alle Karteikarten durchgehen</li>
-        <li>Wichtigste Definitionen nochmal laut erklären</li>
-        <li>Fragen, die noch unklar sind, markieren</li>
+        <li>Alle Karteikarten ein letztes Mal durchgehen</li>
+        <li>Wichtigste Definitionen laut erklären</li>
+        <li>Noch unklare Fragen markieren</li>
       </ul>
     </div>
 
@@ -588,7 +598,7 @@
       <div class="day-name">Entspannen & Vorbereiten</div>
       <ul class="day-tasks">
         <li>Nur kurz Stichpunkte überfliegen</li>
-        <li>Materialien bereitlegen</li>
+        <li>Stift + Materialien bereitlegen</li>
         <li>Ausreichend schlafen!</li>
       </ul>
     </div>
@@ -656,7 +666,6 @@
   }
 
   function updateProgress() {
-    // Block-Zählung: Karten pro Block und erledigte
     const blocks = {1: {total:0, done:0}, 2:{total:0,done:0}, 3:{total:0,done:0}, 4:{total:0,done:0}};
     document.querySelectorAll('.day-card[data-block]').forEach(card => {
       const b = parseInt(card.dataset.block);
