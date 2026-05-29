@@ -6,201 +6,60 @@
   <title>Lernplan SENC2 – Klausur 10.06.2026</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f0f4f8;
-      color: #1a202c;
-      padding: 24px;
-    }
-
-    header {
-      background: linear-gradient(135deg, #2b6cb0, #4299e1);
-      color: white;
-      border-radius: 14px;
-      padding: 28px 32px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f4f8; color: #1a202c; padding: 24px; }
+    header { background: linear-gradient(135deg, #2b6cb0, #4299e1); color: white; border-radius: 14px; padding: 28px 32px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
     header h1 { font-size: 1.7rem; font-weight: 700; }
     header p { font-size: 0.95rem; opacity: 0.88; margin-top: 4px; }
-
-    .countdown-box {
-      background: rgba(255,255,255,0.18);
-      border-radius: 10px;
-      padding: 12px 20px;
-      text-align: center;
-    }
+    .countdown-box { background: rgba(255,255,255,0.18); border-radius: 10px; padding: 12px 20px; text-align: center; }
     .countdown-box .days { font-size: 2.2rem; font-weight: 800; line-height: 1; }
     .countdown-box .label { font-size: 0.8rem; opacity: 0.85; margin-top: 2px; }
-
-    /* Klausurhinweis Banner */
-    .klausur-banner {
-      background: #fffbeb;
-      border: 2px solid #f6ad55;
-      border-radius: 12px;
-      padding: 16px 20px;
-      margin-bottom: 20px;
-    }
+    .klausur-banner { background: #fffbeb; border: 2px solid #f6ad55; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; }
     .klausur-banner h2 { font-size: 0.95rem; font-weight: 700; color: #c05621; margin-bottom: 10px; }
-    .klausur-aufgaben {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .aufgabe-pill {
-      background: white;
-      border: 1px solid #fbd38d;
-      border-radius: 8px;
-      padding: 6px 12px;
-      font-size: 0.8rem;
-      color: #744210;
-    }
+    .klausur-aufgaben { display: flex; flex-wrap: wrap; gap: 8px; }
+    .aufgabe-pill { background: white; border: 1px solid #fbd38d; border-radius: 8px; padding: 6px 12px; font-size: 0.8rem; color: #744210; }
     .aufgabe-pill strong { color: #c05621; }
-
-    .overview {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 14px;
-      margin-bottom: 20px;
-    }
-
-    .topic-card {
-      background: white;
-      border-radius: 12px;
-      padding: 16px 18px;
-      border-left: 5px solid;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-    }
+    .overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 20px; }
+    .topic-card { background: white; border-radius: 12px; padding: 16px 18px; border-left: 5px solid; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
     .topic-card h3 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
     .topic-card p { font-size: 0.82rem; color: #4a5568; }
-    .aufgaben-badge {
-      display: inline-block;
-      background: #e53e3e;
-      color: white;
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 2px 7px;
-      border-radius: 10px;
-      margin-top: 6px;
-    }
-
+    .aufgaben-badge { display: inline-block; background: #e53e3e; color: white; font-size: 0.68rem; font-weight: 700; padding: 2px 7px; border-radius: 10px; margin-top: 6px; }
     .c1 { border-color: #48bb78; } .c1 h3 { color: #276749; }
     .c2 { border-color: #ed8936; } .c2 h3 { color: #dd6b20; }
     .c3 { border-color: #e53e3e; } .c3 h3 { color: #c53030; }
     .c4 { border-color: #9f7aea; } .c4 h3 { color: #6b46c1; }
-
     .week-section { margin-bottom: 26px; }
-
-    .week-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-    .week-badge {
-      background: #2b6cb0;
-      color: white;
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 4px 12px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
+    .week-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .week-badge { background: #2b6cb0; color: white; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
     .week-title { font-size: 1.05rem; font-weight: 700; color: #2d3748; }
     .week-line { flex: 1; height: 1px; background: #e2e8f0; }
-
-    .days-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 10px;
-    }
-
-    .day-card {
-      background: white;
-      border-radius: 10px;
-      padding: 14px 16px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-      border-top: 3px solid #cbd5e0;
-      position: relative;
-      transition: transform 0.15s;
-      cursor: pointer;
-    }
+    .days-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+    .day-card { background: white; border-radius: 10px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); border-top: 3px solid #cbd5e0; position: relative; transition: transform 0.15s; cursor: pointer; }
     .day-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
     .day-card.done { opacity: 0.55; }
-    .day-card.done::after {
-      content: '✓';
-      position: absolute;
-      top: 10px; right: 12px;
-      font-size: 1.1rem;
-      color: #48bb78;
-      font-weight: 800;
-    }
+    .day-card.done::after { content: '✓'; position: absolute; top: 10px; right: 12px; font-size: 1.1rem; color: #48bb78; font-weight: 800; }
     .day-card.today { border-top-color: #4299e1; box-shadow: 0 0 0 2px #bee3f8; }
     .day-card.weekend { background: #f7fafc; }
     .day-card.exam-day { border-top-color: #e53e3e; background: #fff5f5; }
-
     .day-date { font-size: 0.75rem; font-weight: 700; color: #718096; margin-bottom: 4px; text-transform: uppercase; }
     .day-name { font-size: 0.92rem; font-weight: 700; color: #2d3748; margin-bottom: 8px; }
     .day-tasks { list-style: none; }
-    .day-tasks li {
-      font-size: 0.82rem;
-      color: #4a5568;
-      padding: 3px 0 3px 16px;
-      position: relative;
-      border-bottom: 1px solid #f7fafc;
-    }
+    .day-tasks li { font-size: 0.82rem; color: #4a5568; padding: 3px 0 3px 16px; position: relative; border-bottom: 1px solid #f7fafc; }
     .day-tasks li:last-child { border-bottom: none; }
     .day-tasks li::before { content: '→'; position: absolute; left: 0; color: #a0aec0; font-size: 0.75rem; top: 4px; }
-
-    .tag {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      padding: 1px 7px;
-      border-radius: 10px;
-      margin-bottom: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
+    .tag { display: inline-block; font-size: 0.68rem; font-weight: 700; padding: 1px 7px; border-radius: 10px; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.3px; }
     .tag-agile { background: #c6f6d5; color: #276749; }
     .tag-re { background: #feebc8; color: #9c4221; }
     .tag-test { background: #fed7d7; color: #9b2c2c; }
     .tag-uml { background: #e9d8fd; color: #6b46c1; }
     .tag-wiederholung { background: #e2e8f0; color: #4a5568; }
     .tag-exam { background: #fed7d7; color: #9b2c2c; }
-
-    .time-badge {
-      font-size: 0.7rem;
-      color: #a0aec0;
-      float: right;
-    }
-
-    .tips-box {
-      background: white;
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 28px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-      border-left: 5px solid #4299e1;
-    }
+    .time-badge { font-size: 0.7rem; color: #a0aec0; float: right; }
+    .tips-box { background: white; border-radius: 12px; padding: 20px 24px; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); border-left: 5px solid #4299e1; }
     .tips-box h2 { font-size: 1rem; font-weight: 700; color: #2b6cb0; margin-bottom: 12px; }
     .tips-box ul { list-style: none; }
     .tips-box ul li { font-size: 0.85rem; color: #4a5568; padding: 5px 0 5px 20px; position: relative; }
     .tips-box ul li::before { content: '💡'; position: absolute; left: 0; }
-
-    .progress-section {
-      background: white;
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin-bottom: 28px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-    }
+    .progress-section { background: white; border-radius: 12px; padding: 20px 24px; margin-bottom: 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
     .progress-section h2 { font-size: 1rem; font-weight: 700; color: #2d3748; margin-bottom: 14px; }
     .progress-item { margin-bottom: 10px; }
     .progress-label { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px; }
@@ -210,13 +69,7 @@
     .pb2 { background: linear-gradient(90deg, #ed8936, #dd6b20); }
     .pb3 { background: linear-gradient(90deg, #e53e3e, #c53030); }
     .pb4 { background: linear-gradient(90deg, #9f7aea, #6b46c1); }
-
-    footer {
-      text-align: center;
-      font-size: 0.78rem;
-      color: #a0aec0;
-      margin-top: 20px;
-    }
+    footer { text-align: center; font-size: 0.78rem; color: #a0aec0; margin-top: 20px; }
   </style>
 </head>
 <body>
@@ -225,7 +78,7 @@
   <div>
     <h1>📚 Lernplan SENC2</h1>
     <p>Software Engineering &amp; Continuous Integration · FHDW · Prof. Dr. Kahnert</p>
-    <p style="margin-top:8px; font-size:0.85rem;">21. Mai – 10. Juni 2026 &nbsp;·&nbsp; ca. 1–2 Std. / Tag</p>
+    <p style="margin-top:8px; font-size:0.85rem;">29. Mai – 10. Juni 2026 &nbsp;·&nbsp; ca. 1–2 Std. / Tag</p>
   </div>
   <div class="countdown-box">
     <div class="days" id="countdown">–</div>
@@ -233,43 +86,41 @@
   </div>
 </header>
 
-<!-- Klausurhinweis Banner -->
 <div class="klausur-banner">
   <h2>🎯 Klausurstruktur (laut Hinweis Prof. Kahnert)</h2>
   <div class="klausur-aufgaben">
     <div class="aufgabe-pill"><strong>Aufgabe 1+2:</strong> Agile Bewegung – Kap. 2.5 + Manifesto + Principles</div>
     <div class="aufgabe-pill"><strong>Aufgabe 3:</strong> Requirements Engineering – Kap. 3.1</div>
     <div class="aufgabe-pill"><strong>Aufgabe 4:</strong> Softwaretest – Kap. 4 komplett</div>
-    <div class="aufgabe-pill"><strong>Aufgabe 5:</strong> UML Klassendiagramm – Kap. 5.2 + 5.1</div>
-    <div class="aufgabe-pill" style="background:#fff0f0;border-color:#fc8181;color:#9b2c2c;"><strong>Format:</strong> 4 Wissensaufgaben + 1 Anwendungsaufgabe (UML zeichnen)</div>
+    <div class="aufgabe-pill"><strong>Aufgabe 5:</strong> UML Klassendiagramm – Kap. 5.2 + 1 Folie 5.1</div>
+    <div class="aufgabe-pill" style="background:#fff0f0;border-color:#fc8181;color:#9b2c2c;"><strong>Format:</strong> 4 Wissensaufgaben + 1 Anwendungsaufgabe · max. 6 Unteraufgaben · 20 Pkt. á Aufgabe</div>
+    <div class="aufgabe-pill" style="background:#fff0f0;border-color:#fc8181;color:#9b2c2c;"><strong>Zeichnen:</strong> Bleistift reicht, kein Lineal nötig</div>
   </div>
 </div>
 
-<!-- Themenübersicht -->
 <div class="overview">
   <div class="topic-card c1">
     <h3>🟢 Agile (Kap. 2.5)</h3>
-    <p><strong>Scrum, Manifesto, Principles, CI</strong><br>Skript II (S. 20–32)<br>+ Agile Manifesto PDF<br>+ Principles PDF</p>
+    <p><strong>Scrum, Manifesto, 12 Principles</strong><br>Skript II S. 20–28<br>+ Agile Manifesto PDF<br>+ Principles PDF</p>
     <span class="aufgaben-badge">2 Aufgaben ⭐⭐</span>
   </div>
   <div class="topic-card c2">
     <h3>🟠 Requirements Eng. (Kap. 3.1)</h3>
-    <p><strong>Ermittlung, Stakeholder, funktional vs. nicht-funktional</strong><br>Skript III (Kap. 3.1)</p>
+    <p><strong>Ermittlung, Stakeholder, funktional vs. nicht-funktional</strong><br>Skript III Kap. 3.1</p>
     <span class="aufgaben-badge">1 Aufgabe ⭐</span>
   </div>
   <div class="topic-card c3">
     <h3>🔴 Softwaretest (Kap. 4)</h3>
-    <p><strong>ISTQB, Testprozess, Testarten</strong><br>Skript IV (komplett)</p>
+    <p><strong>ISTQB, Testprozess, Testarten</strong><br>Skript IV komplett</p>
     <span class="aufgaben-badge">1 Aufgabe ⭐</span>
   </div>
   <div class="topic-card c4">
     <h3>🟣 UML (Kap. 5.2)</h3>
-    <p><strong>Klassendiagramm aus Text zeichnen</strong><br>Skript Kap. 5.2 + 1 Folie 5.1</p>
+    <p><strong>Klassendiagramm aus Text zeichnen</strong><br>Skript V Kap. 5.2 + 1 Folie 5.1</p>
     <span class="aufgaben-badge">1 Aufgabe ⭐</span>
   </div>
 </div>
 
-<!-- Fortschrittsanzeige -->
 <div class="progress-section">
   <h2>📊 Themen-Fortschritt</h2>
   <div class="progress-item">
@@ -288,35 +139,33 @@
     <div class="progress-label"><span>UML / OO-Analyse (Kap. 5.2)</span><span id="p4-label">0%</span></div>
     <div class="progress-bar-bg"><div class="progress-bar pb4" id="pb4"></div></div>
   </div>
-  <p style="font-size:0.75rem;color:#a0aec0;margin-top:10px;">💡 Klicke auf einen Tag, um ihn als erledigt zu markieren – der Fortschritt wird automatisch berechnet.</p>
+  <p style="font-size:0.75rem;color:#a0aec0;margin-top:10px;">💡 Klicke auf einen Tag, um ihn als erledigt zu markieren.</p>
 </div>
 
-<!-- Tipps -->
 <div class="tips-box">
-  <h2>🎯 Lernstrategie (angepasst an Klausurhinweis)</h2>
+  <h2>🎯 Lernstrategie</h2>
   <ul>
-    <li>Agile hat 2 Aufgaben – das ist der wichtigste Block! Manifesto-Werte + alle 12 Principles + Scrum Theory + Scrum Values auswendig kennen</li>
-    <li>RE: Nur Kap. 3.1 ist relevant – funktional vs. nicht-funktional und Stakeholder sind Klausur-Klassiker</li>
-    <li>UML ist die Anwendungsaufgabe – übe Text → Klassendiagramm umzusetzen, das kommt garantiert. Zeichnen mit Bleistift, Lineal nicht nötig!</li>
-    <li>ISTQB-Grundbegriffe beim Testkapitel direkt auf Karteikarten schreiben</li>
+    <li>Agile hat 2 Aufgaben – wichtigster Block! Scrum Theory + Values + Manifesto + alle 12 Principles kennen</li>
+    <li>RE: Nur Kap. 3.1 – funktional vs. nicht-funktional und Stakeholder sind Klausur-Klassiker</li>
+    <li>UML ist die Anwendungsaufgabe – Text → Klassendiagramm üben. Bleistift reicht, kein Lineal nötig!</li>
+    <li>Jede Aufgabe hat max. 6 Unteraufgaben und gibt 20 Punkte → strukturiert und vollständig antworten</li>
     <li>Abkürzungen lernen! (Maries Lernzettel besorgen)</li>
-    <li>Jede Aufgabe hat max. 6 Unteraufgaben und gibt 20 Punkte → Antworten strukturiert und vollständig halten</li>
-    <li>Ab 8. Juni: Nur noch wiederholen, nichts Neues mehr anfangen</li>
+    <li>Ab 9. Juni: Nur noch wiederholen, nichts Neues mehr anfangen</li>
   </ul>
 </div>
 
-<!-- WOCHE 1 -->
+<!-- WOCHE 1: Agile -->
 <div class="week-section">
   <div class="week-header">
     <span class="week-badge">Woche 1</span>
     <span class="week-title">Agile Bewegung & Scrum (2 Klausuraufgaben!)</span>
     <div class="week-line"></div>
-    <span style="font-size:0.8rem;color:#718096;white-space:nowrap">21.–25. Mai</span>
+    <span style="font-size:0.8rem;color:#718096;white-space:nowrap">29. Mai – 2. Juni</span>
   </div>
   <div class="days-grid">
 
-    <div class="day-card" data-date="2026-05-21" data-block="1" onclick="toggleDone(this)">
-      <div class="day-date">Do, 21. Mai</div>
+    <div class="day-card" data-date="2026-05-29" data-block="1" onclick="toggleDone(this)">
+      <div class="day-date">Do, 29. Mai</div>
       <span class="tag tag-agile">Agile</span>
       <span class="time-badge">~1,5 Std.</span>
       <div class="day-name">Agile Grundlagen + Scrum Theory & Values</div>
@@ -328,8 +177,8 @@
       </ul>
     </div>
 
-    <div class="day-card" data-date="2026-05-22" data-block="1" onclick="toggleDone(this)">
-      <div class="day-date">Fr, 22. Mai</div>
+    <div class="day-card" data-date="2026-05-30" data-block="1" onclick="toggleDone(this)">
+      <div class="day-date">Fr, 30. Mai</div>
       <span class="tag tag-agile">Agile</span>
       <span class="time-badge">~1,5 Std.</span>
       <div class="day-name">Scrum: Rollen, Artefakte, Events + Vor/Nachteile</div>
@@ -338,36 +187,36 @@
         <li>Scrum Team: Product Owner, Scrum Master, Developers</li>
         <li>Artefakte: Product Backlog, Sprint Backlog, Increment + Definition of Done</li>
         <li>Events: Sprint, Sprint Planning, Daily Scrum, Sprint Review, Sprint Retrospective</li>
-        <li>Vor- & Nachteile Scrum + Abwägung agil vs. plangetrieben</li>
+        <li>Vor- &amp; Nachteile Scrum + agil vs. plangetrieben</li>
       </ul>
     </div>
 
-    <div class="day-card weekend" data-date="2026-05-23" data-block="1" onclick="toggleDone(this)">
-      <div class="day-date">Sa, 23. Mai</div>
+    <div class="day-card weekend" data-date="2026-05-31" data-block="1" onclick="toggleDone(this)">
+      <div class="day-date">Sa, 31. Mai</div>
       <span class="tag tag-agile">Agile</span>
       <span class="time-badge">~1,5 Std.</span>
       <div class="day-name">Agile Manifesto – 4 Werte</div>
       <ul class="day-tasks">
         <li>Agile Manifesto PDF komplett lesen</li>
-        <li>4 Werte auswendig lernen (Individuals, Working Software, Customer Collab., Responding to Change)</li>
+        <li>4 Werte auswendig: Individuals, Working Software, Customer Collab., Responding to Change</li>
         <li>Bedeutung jedes Wertes erklären können</li>
       </ul>
     </div>
 
-    <div class="day-card weekend" data-date="2026-05-24" data-block="1" onclick="toggleDone(this)">
-      <div class="day-date">So, 24. Mai</div>
+    <div class="day-card weekend" data-date="2026-06-01" data-block="1" onclick="toggleDone(this)">
+      <div class="day-date">So, 1. Juni</div>
       <span class="tag tag-agile">Agile</span>
       <span class="time-badge">~1,5 Std.</span>
       <div class="day-name">12 Principles (Begleitdokument)</div>
       <ul class="day-tasks">
         <li>Principles Behind the Agile Manifesto PDF lesen</li>
         <li>Alle 12 Principles durcharbeiten</li>
-        <li>Wichtigste Principles markieren &amp; auf Karteikarten</li>
+        <li>Wichtigste Principles auf Karteikarten</li>
       </ul>
     </div>
 
-    <div class="day-card" data-date="2026-05-25" data-block="1" onclick="toggleDone(this)">
-      <div class="day-date">Mo, 25. Mai</div>
+    <div class="day-card" data-date="2026-06-02" data-block="1" onclick="toggleDone(this)">
+      <div class="day-date">Mo, 2. Juni</div>
       <span class="tag tag-wiederholung">Wiederholung</span>
       <span class="time-badge">~1 Std.</span>
       <div class="day-name">Agile Wiederholung</div>
@@ -375,25 +224,24 @@
         <li>Scrum Theory + 5 Values aus dem Kopf nennen</li>
         <li>Rollen, Artefakte, Events vollständig aufzählen</li>
         <li>4 Manifesto-Werte + wichtigste Principles aus Gedächtnis</li>
-        <li>Agil vs. plangetrieben: Unterschiede erklären</li>
       </ul>
     </div>
 
   </div>
 </div>
 
-<!-- WOCHE 2 -->
+<!-- WOCHE 2: RE + Test -->
 <div class="week-section">
   <div class="week-header">
     <span class="week-badge">Woche 2</span>
     <span class="week-title">Requirements Engineering + Softwaretest</span>
     <div class="week-line"></div>
-    <span style="font-size:0.8rem;color:#718096;white-space:nowrap">26.–31. Mai</span>
+    <span style="font-size:0.8rem;color:#718096;white-space:nowrap">3.–7. Juni</span>
   </div>
   <div class="days-grid">
 
-    <div class="day-card" data-date="2026-05-26" data-block="2" onclick="toggleDone(this)">
-      <div class="day-date">Di, 26. Mai</div>
+    <div class="day-card" data-date="2026-06-03" data-block="2" onclick="toggleDone(this)">
+      <div class="day-date">Di, 3. Juni</div>
       <span class="tag tag-re">RE</span>
       <span class="time-badge">~1,5 Std.</span>
       <div class="day-name">Requirements Engineering – Grundlagen</div>
@@ -405,8 +253,8 @@
       </ul>
     </div>
 
-    <div class="day-card" data-date="2026-05-27" data-block="2" onclick="toggleDone(this)">
-      <div class="day-date">Mi, 27. Mai</div>
+    <div class="day-card" data-date="2026-06-04" data-block="2" onclick="toggleDone(this)">
+      <div class="day-date">Mi, 4. Juni</div>
       <span class="tag tag-re">RE</span>
       <span class="time-badge">~1,5 Std.</span>
       <div class="day-name">Stakeholder & Anforderungsarten</div>
@@ -418,8 +266,8 @@
       </ul>
     </div>
 
-    <div class="day-card" data-date="2026-05-28" data-block="3" onclick="toggleDone(this)">
-      <div class="day-date">Do, 28. Mai</div>
+    <div class="day-card" data-date="2026-06-05" data-block="3" onclick="toggleDone(this)">
+      <div class="day-date">Do, 5. Juni</div>
       <span class="tag tag-test">Test</span>
       <span class="time-badge">~1,5 Std.</span>
       <div class="day-name">Softwaretest – Einführung & ISTQB</div>
@@ -431,141 +279,29 @@
       </ul>
     </div>
 
-    <div class="day-card" data-date="2026-05-29" data-block="3" onclick="toggleDone(this)">
-      <div class="day-date">Fr, 29. Mai</div>
+    <div class="day-card weekend" data-date="2026-06-06" data-block="3" onclick="toggleDone(this)">
+      <div class="day-date">Fr, 6. Juni</div>
       <span class="tag tag-test">Test</span>
       <span class="time-badge">~2 Std.</span>
-      <div class="day-name">Fundamentaler Testprozess</div>
+      <div class="day-name">Testprozess + Testarten</div>
       <ul class="day-tasks">
-        <li>Skript IV: S. 8–16</li>
+        <li>Skript IV: S. 8–24</li>
         <li>Phasen: Planung, Steuerung, Analyse, Design, Realisierung, Abschluss</li>
-        <li>Testrahmen verstehen</li>
-        <li>Was gehört zur Testplanung?</li>
-      </ul>
-    </div>
-
-    <div class="day-card weekend" data-date="2026-05-30" data-block="3" onclick="toggleDone(this)">
-      <div class="day-date">Sa, 30. Mai</div>
-      <span class="tag tag-test">Test</span>
-      <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">Testarten</div>
-      <ul class="day-tasks">
-        <li>Skript IV: S. 16–24</li>
         <li>Blackbox vs. Whitebox vs. Greybox</li>
-        <li>Regressionstest: Wann &amp; Warum?</li>
-        <li>Statischer Test: Inspektion, Review</li>
+        <li>Regressionstest, statischer Test: Inspektion, Review</li>
       </ul>
     </div>
 
-    <div class="day-card weekend" data-date="2026-05-31" data-block="2" onclick="toggleDone(this)">
-      <div class="day-date">So, 31. Mai</div>
-      <span class="tag tag-wiederholung">Wiederholung</span>
-      <span class="time-badge">~1 Std.</span>
-      <div class="day-name">Woche 2 wiederholen</div>
-      <ul class="day-tasks">
-        <li>RE: Stakeholder-Typen + funktional vs. nicht-funktional frei erklären</li>
-        <li>Testprozess-Phasen aus dem Kopf aufzählen</li>
-        <li>Karteikarten Test-Grundbegriffe anlegen</li>
-      </ul>
-    </div>
-
-  </div>
-</div>
-
-<!-- WOCHE 3 -->
-<div class="week-section">
-  <div class="week-header">
-    <span class="week-badge">Woche 3</span>
-    <span class="week-title">UML Klassendiagramm + Gesamtwiederholung</span>
-    <div class="week-line"></div>
-    <span style="font-size:0.8rem;color:#718096;white-space:nowrap">1.–7. Juni</span>
-  </div>
-  <div class="days-grid">
-
-    <div class="day-card" data-date="2026-06-01" data-block="4" onclick="toggleDone(this)">
-      <div class="day-date">Mo, 1. Juni</div>
+    <div class="day-card weekend" data-date="2026-06-07" data-block="4" onclick="toggleDone(this)">
+      <div class="day-date">Sa, 7. Juni</div>
       <span class="tag tag-uml">UML</span>
       <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">OO-Grundlagen + Schreibweisen (5.1)</div>
+      <div class="day-name">OO-Grundlagen + Schreibweisen (5.1) + Klassen</div>
       <ul class="day-tasks">
-        <li>Skript V: Kap. 5.1 – OOA, OOD, OOP, OOSE: Unterschiede kennen</li>
-        <li>Schreibweisen-Folie (5.1): CamelCase, PascalCase, SNAKE_CASE etc. lernen</li>
-        <li>Skript V: Kap. 5.2 – Objekt vs. Klasse: Definition + Unterschied</li>
-        <li>Geheimnisprinzip (Kapselung) verstehen</li>
-      </ul>
-    </div>
-
-    <div class="day-card" data-date="2026-06-02" data-block="4" onclick="toggleDone(this)">
-      <div class="day-date">Di, 2. Juni</div>
-      <span class="tag tag-uml">UML</span>
-      <span class="time-badge">~2 Std.</span>
-      <div class="day-name">Klassen, Attribute, Operationen + Assoziationen</div>
-      <ul class="day-tasks">
-        <li>Skript V: Kap. 5.2 – Klassennotation: Name, Attributliste, Operationen</li>
-        <li>Sichtbarkeiten: + public, - private, # protected</li>
-        <li>Assoziation: Notation, Multiplizitäten (1, *, 0..1, 1..*)</li>
-        <li>Aggregation (offene Raute) vs. Komposition (gefüllte Raute) – Unterschied!</li>
-      </ul>
-    </div>
-
-    <div class="day-card" data-date="2026-06-03" data-block="4" onclick="toggleDone(this)">
-      <div class="day-date">Mi, 3. Juni</div>
-      <span class="tag tag-uml">UML</span>
-      <span class="time-badge">~2 Std.</span>
-      <div class="day-name">Vererbung + Text → Klassendiagramm üben</div>
-      <ul class="day-tasks">
-        <li>Skript V: Generalisierung vs. Spezialisierung (Dreieck-Notation)</li>
-        <li>Vererbung: was wird vererbt, was nicht (Attributwerte & Konstruktoren NICHT)</li>
-        <li>Textuellen Zusammenhang lesen → Klassen + Beziehungen identifizieren</li>
-        <li>Komplettes Klassendiagramm auf Papier zeichnen (Bleistift reicht!)</li>
-      </ul>
-    </div>
-
-    <div class="day-card" data-date="2026-06-04" data-block="1" onclick="toggleDone(this)">
-      <div class="day-date">Do, 4. Juni</div>
-      <span class="tag tag-wiederholung">Wiederholung</span>
-      <span class="time-badge">~2 Std.</span>
-      <div class="day-name">Gesamtwiederholung Agile + RE</div>
-      <ul class="day-tasks">
-        <li>Scrum komplett frei erklären (Rollen, Artefakte, Ceremonies)</li>
-        <li>4 Manifesto-Werte + wichtigste Principles nennen</li>
-        <li>RE: funktional vs. nicht-funktional mit Beispielen</li>
-      </ul>
-    </div>
-
-    <div class="day-card" data-date="2026-06-05" data-block="3" onclick="toggleDone(this)">
-      <div class="day-date">Fr, 5. Juni</div>
-      <span class="tag tag-wiederholung">Wiederholung</span>
-      <span class="time-badge">~2 Std.</span>
-      <div class="day-name">Gesamtwiederholung Test + UML</div>
-      <ul class="day-tasks">
-        <li>Testprozess-Phasen aus Kopf aufzählen</li>
-        <li>Testarten mit Beispielen erklären</li>
-        <li>Noch ein UML Klassendiagramm aus Text zeichnen</li>
-      </ul>
-    </div>
-
-    <div class="day-card weekend" data-date="2026-06-06" onclick="toggleDone(this)">
-      <div class="day-date">Sa, 6. Juni</div>
-      <span class="tag tag-wiederholung">Wiederholung</span>
-      <span class="time-badge">~1,5 Std.</span>
-      <div class="day-name">Übungsfragen & Lücken schließen</div>
-      <ul class="day-tasks">
-        <li>Alle Karteikarten durchgehen</li>
-        <li>Schwachstellen gezielt angehen</li>
-        <li>Abkürzungen: ISTQB, CI, UML, RE, PO, SM</li>
-      </ul>
-    </div>
-
-    <div class="day-card weekend" data-date="2026-06-07" onclick="toggleDone(this)">
-      <div class="day-date">So, 7. Juni</div>
-      <span class="tag tag-wiederholung">Wiederholung</span>
-      <span class="time-badge">~1 Std.</span>
-      <div class="day-name">Definitionen & Karteikarten finalisieren</div>
-      <ul class="day-tasks">
-        <li>Alle Karteikarten ein letztes Mal durchgehen</li>
-        <li>Wichtigste Definitionen laut erklären</li>
-        <li>Noch unklare Fragen markieren</li>
+        <li>Skript V: Kap. 5.1 – OOA, OOD, OOP + Schreibweisen (CamelCase, PascalCase etc.)</li>
+        <li>Skript V: Kap. 5.2 – Objekt vs. Klasse, Geheimnisprinzip</li>
+        <li>Klassennotation: Name, Attribute, Operationen, Sichtbarkeiten (+ - #)</li>
+        <li>Assoziation, Multiplizitäten (1, *, 0..1, 1..*)</li>
       </ul>
     </div>
 
@@ -575,43 +311,46 @@
 <!-- FINALPHASE -->
 <div class="week-section">
   <div class="week-header">
-    <span class="week-badge" style="background:#e53e3e">Finale Phase</span>
-    <span class="week-title">Leichter Review + Klausur</span>
+    <span class="week-badge" style="background:#6b46c1">UML + Finale</span>
+    <span class="week-title">UML üben + Gesamtwiederholung + Klausur</span>
     <div class="week-line"></div>
     <span style="font-size:0.8rem;color:#718096;white-space:nowrap">8.–10. Juni</span>
   </div>
   <div class="days-grid">
 
-    <div class="day-card" data-date="2026-06-08" onclick="toggleDone(this)">
-      <div class="day-date">Mo, 8. Juni</div>
-      <span class="tag tag-wiederholung">Finale</span>
-      <span class="time-badge">~1 Std.</span>
-      <div class="day-name">Leichter Review – kein Neues!</div>
+    <div class="day-card" data-date="2026-06-08" data-block="4" onclick="toggleDone(this)">
+      <div class="day-date">So, 8. Juni</div>
+      <span class="tag tag-uml">UML</span>
+      <span class="time-badge">~2 Std.</span>
+      <div class="day-name">Aggregation, Komposition, Vererbung + üben</div>
       <ul class="day-tasks">
-        <li>Nur Karteikarten überblicken</li>
-        <li>Eigene Zusammenfassung lesen</li>
-        <li>Früh schlafen gehen</li>
+        <li>Aggregation (offene Raute) vs. Komposition (gefüllte Raute)</li>
+        <li>Generalisierung / Spezialisierung (Dreieck-Notation)</li>
+        <li>Vererbung: was wird vererbt, was nicht</li>
+        <li>Text → Klassendiagramm auf Papier zeichnen üben!</li>
       </ul>
     </div>
 
     <div class="day-card" data-date="2026-06-09" onclick="toggleDone(this)">
-      <div class="day-date">Di, 9. Juni</div>
+      <div class="day-date">Mo, 9. Juni</div>
       <span class="tag tag-wiederholung">Finale</span>
-      <span class="time-badge">~30 Min.</span>
-      <div class="day-name">Entspannen & Vorbereiten</div>
+      <span class="time-badge">~1,5 Std.</span>
+      <div class="day-name">Gesamtwiederholung – alles nochmal</div>
       <ul class="day-tasks">
-        <li>Nur kurz Stichpunkte überfliegen</li>
-        <li>Stift + Materialien bereitlegen</li>
-        <li>Ausreichend schlafen!</li>
+        <li>Scrum komplett aus dem Kopf: Theory, Values, Rollen, Artefakte, Events</li>
+        <li>4 Manifesto-Werte + RE-Grundbegriffe</li>
+        <li>Testarten + ISTQB-Begriffe</li>
+        <li>Noch ein UML-Diagramm aus Text zeichnen</li>
       </ul>
     </div>
 
     <div class="day-card exam-day" data-date="2026-06-10" onclick="toggleDone(this)">
-      <div class="day-date">Mi, 10. Juni</div>
+      <div class="day-date">Di, 10. Juni</div>
       <span class="tag tag-exam">🎓 KLAUSUR</span>
       <div class="day-name">Software Engineering & CI – Klausur</div>
       <ul class="day-tasks">
         <li>Gut frühstücken</li>
+        <li>Bleistift einpacken!</li>
         <li>Viel Erfolg! 🍀</li>
       </ul>
     </div>
@@ -621,11 +360,10 @@
 
 <footer>
   Erstellt für Kubilay · SENC2 · FHDW · Klausur am 10.06.2026<br>
-  Klicke auf Tage um sie als erledigt zu markieren – Fortschritt wird gespeichert
+  Klicke auf Tage um sie als erledigt zu markieren
 </footer>
 
 <script>
-  // Countdown
   function updateCountdown() {
     const exam = new Date('2026-06-10');
     const today = new Date();
@@ -635,26 +373,18 @@
   }
   updateCountdown();
 
-  // Heutigen Tag markieren
   const todayStr = new Date().toISOString().split('T')[0];
   document.querySelectorAll('.day-card').forEach(card => {
-    if (card.dataset.date === todayStr) {
-      card.classList.add('today');
-    }
+    if (card.dataset.date === todayStr) card.classList.add('today');
   });
 
-  // Done-Toggle mit localStorage
   function toggleDone(card) {
     const date = card.dataset.date;
     if (!date) return;
     card.classList.toggle('done');
     const done = JSON.parse(localStorage.getItem('senc_done') || '[]');
-    if (card.classList.contains('done')) {
-      if (!done.includes(date)) done.push(date);
-    } else {
-      const idx = done.indexOf(date);
-      if (idx > -1) done.splice(idx, 1);
-    }
+    if (card.classList.contains('done')) { if (!done.includes(date)) done.push(date); }
+    else { const idx = done.indexOf(date); if (idx > -1) done.splice(idx, 1); }
     localStorage.setItem('senc_done', JSON.stringify(done));
     updateProgress();
   }
@@ -669,13 +399,10 @@
   }
 
   function updateProgress() {
-    const blocks = {1: {total:0, done:0}, 2:{total:0,done:0}, 3:{total:0,done:0}, 4:{total:0,done:0}};
+    const blocks = {1:{total:0,done:0},2:{total:0,done:0},3:{total:0,done:0},4:{total:0,done:0}};
     document.querySelectorAll('.day-card[data-block]').forEach(card => {
       const b = parseInt(card.dataset.block);
-      if (blocks[b]) {
-        blocks[b].total++;
-        if (card.classList.contains('done')) blocks[b].done++;
-      }
+      if (blocks[b]) { blocks[b].total++; if (card.classList.contains('done')) blocks[b].done++; }
     });
     [1,2,3,4].forEach(b => {
       const pct = blocks[b].total > 0 ? Math.round(blocks[b].done / blocks[b].total * 100) : 0;
